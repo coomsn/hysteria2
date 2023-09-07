@@ -1,3 +1,4 @@
+```
 listen: :443
 
 tls:
@@ -19,5 +20,5 @@ masquerade:
   proxy:
     url: https://sb.scorecardresearch.com
     rewriteHost: true
-
+```
 
