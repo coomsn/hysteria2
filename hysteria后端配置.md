@@ -104,6 +104,7 @@ docker logs -f hysteria
 ```
 ​
 更新，在 hysteria 目录执行。
+
 ```
 docker compose pull && docker compose up -d
 ```
