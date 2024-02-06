@@ -8,7 +8,7 @@ TG交流群
 ```
 apt install -y vim curl socat openssl && mkdir hysteria
 ```
-
+```
 ​```
 curl https://get.acme.sh | sh -s email=rebecca554owen@gmail.com
 ```
