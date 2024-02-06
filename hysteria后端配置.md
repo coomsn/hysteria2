@@ -34,10 +34,15 @@ curl -fsSL https://get.docker.com | bash -s docker && systemctl start docker && 
 ​
 修改 docker-compose.yml, server.yaml 配置文件。
 Finalshell 注意：直接新建文件，复制粘贴过去，用终端粘贴不了符号。
+
+```
 cd hysteria
+```
 
 ​
 --配置文件docker-compose.yml参考
+
+```
 cat > docker-compose.yml <<
 EOF
 version: "3.9"
@@ -53,12 +58,15 @@ services:
       - ./example.com.key:/etc/hysteria/example.com.key # 这里不用改。
     command: ["server", "-c", "/etc/hysteria/server.yaml"]
 EOF
-
+```
 ​
 --配置文件server.yaml参考
-vim server.yaml
 
+```
+vim server.yaml
+```
 ​
+```
 v2board:
   apiHost: https://example.com # xboard面板域名
   apiKey: 123456789 # 通讯密钥
@@ -74,19 +82,28 @@ trafficStats:
 acl:
   inline:
     - reject(pincong.rocks) #acl规则自行查阅hysteria2文档
-
+```
 ​
 启动docker compose
+
+```
 docker compose up -d
+```
 
 ​
 停止docker compose(不用的话记得停止运行，避免删除Hysteria2节点后数据库v2_log存在大量报错记录)
+
+```
 docker compose down
+```
 
 ​
 查看日志：
+```
 docker logs -f hysteria
-
+```
 ​
 更新，在 hysteria 目录执行。
+```
 docker compose pull && docker compose up -d
+```
